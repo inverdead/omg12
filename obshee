@@ -1,0 +1,21 @@
+import time
+def consider_time(method):
+    def data(*args, **kwargs):
+        print(f"Выполняется функция {method.__name__}")
+        start = time.time()
+        method(*args, **kwargs)
+        end = time.time()
+        print(f"Время выполнения функции в секундах: {end - start}")
+    return data
+@consider_time
+def pretend_that_we_are_working():
+    bull_shit = ["gg",2,5]
+    for i in range(20000):
+        bull_shit.append(2)
+@consider_time
+def we_also_pretend_that_we_are_working(n):
+    for i in range(n):
+        pass
+if 1:
+    pretend_that_we_are_working()
+    we_also_pretend_that_we_are_working(2000000)
