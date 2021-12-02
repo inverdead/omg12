@@ -1,4 +1,8 @@
 from math import sqrt
+from obshee import consider_time
+
+
+@consider_time
 def dacha():
     print("Площадь участка")
     w = float(input("Ширина в футах"))
@@ -8,6 +12,7 @@ def dacha():
     res=(SQFT_PER_ACRE/43560)
     print("Площадь в акрах", res)
 
+@consider_time
 def calculate_momentum(meters_height):
     meters_height = int(input("Введите высоту"))
     starting_speed = 0
@@ -15,7 +20,6 @@ def calculate_momentum(meters_height):
     starting_speed = sqrt(starting_speed ** 2)
     momentum = starting_speed + 2 * Gravity_thrust * meters_height
     return momentum
-
 
 
 print("Какая задача? (1 или 2)")
